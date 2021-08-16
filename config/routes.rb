@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   # UI
-  get 'home/index'
   root 'home#index'
 
   # API
