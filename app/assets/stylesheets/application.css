@@ -1,15 +1,294 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* 
+====== 
+Fonts
+======
+*/
+@import url("https://fonts.googleapis.com/css?family=Catamaran:300,400|Kaushan+Script&display=swap");
+/* 
+====== 
+Variables 
+======
+*/
+:root {
+  --primaryColor: #9e3aa3;
+  --primaryDarkColor: #4e1d51;
+  --primaryFont: "Catamaran", sans-serif;
+  --slantedFont: "Kaushan Script", cursive;
+  --mainWhite: #fff;
+  --offWhite: #f7f7f7;
+  --mainBackground: rgb(250, 245, 243);
+  --mainOverlay: rgba(35, 10, 36, 0.4);
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --darkGrey: #afafaf;
+  --mainRed: #bd0303;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 0.3rem;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --mainBorderRadius: 0.25rem;
+  --smallWidth: 85vw;
+  --maxWidth: 1170px;
+}
+/* 
+====== 
+Global Styles 
+======
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--primaryFont);
+  color: var(--mainBlack);
+  background: var(--mainBackground);
+  line-height: 1.4;
+  font-size: 1rem;
+  font-weight: 300;
+  margin-top: 5rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--slantedFont);
+  margin-bottom: 1.25rem;
+  letter-spacing: var(--mainSpacing);
+}
+p {
+  margin-bottom: 1.25rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: var(--mainBlack);
+}
+img {
+  width: 100%;
+  display: block;
+}
+/* 
+====== 
+Buttons 
+======
+*/
+.btn,
+.btn-white,
+.btn-primary {
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  color: var(--primaryColor);
+  border: 2px solid var(--primaryColor);
+  padding: 0.45rem 0.8rem;
+  display: inline-block;
+  transition: var(--mainTransition);
+  cursor: pointer;
+  font-size: 0.8rem;
+  background: transparent;
+}
+.btn:hover {
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+}
+.btn-white {
+  background: transparent;
+  color: var(--mainWhite);
+  border-color: var(--mainWhite);
+}
+.btn-white:hover {
+  background: var(--mainWhite);
+  color: var(--primaryColor);
+}
+.btn-primary {
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  border-color: var(--primaryColor);
+}
+.btn-primary:hover {
+  background: transparent;
+  color: var(--primaryColor);
+}
+.btn-block {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  box-shadow: var(--lightShadow);
+  text-align: center;
+}
+
+/* 
+====== 
+Navbar 
+======
+*/
+
+.navbar {
+  background: var(--mainWhite);
+  height: 5rem;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--primaryColor);
+  box-shadow: var(--lightShadow);
+}
+.nav-container {
+  width: 100%;
+  position: relative;
+}
+.nav-center {
+  width: var(--smallWidth);
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-sidebar-toggle,
+.btn-cart-toggle,
+.btn-close {
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.btn-close {
+  color: var(--mainRed);
+  font-size: 2rem;
+}
+.btn-cart-container {
+  position: relative;
+}
+.btn-cart-items {
+  display: block;
+  position: absolute;
+  background: var(--primaryColor);
+  top: -45%;
+  right: -40%;
+  padding: 0rem 0.3rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  color: var(--mainWhite);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav-links a,
+.nav-aside a {
+  text-transform: capitalize;
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  padding: 0.25rem 0.5rem;
+  transition: var(--mainTransition);
+}
+.nav-links a:hover,
+.nav-aside a:hover {
+  color: var(--primaryColor);
+}
+.nav-logo {
+  line-height: 0;
+}
+.logo {
+  width: 9rem;
+}
+.big-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.nav-aside {
+  display: flex;
+  align-items: center;
+}
+.nav-aside a {
+  margin-right: 1rem;
+}
+.section {
+  padding: 4rem 0;
+}
+.section-title {
+  font-size: 2.3rem;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+.title {
+  text-align: center;
+  letter-spacing: var(--mainSpacing);
+  text-transform: capitalize;
+  font-size: 2.3rem;
+}
+
+.form {
+  width: var(--smallWidth);
+  margin: 0 auto;
+  margin-top: 10rem;
+  max-width: 35rem;
+}
+.login-form,
+.checkout-form {
+  background: var(--mainWhite);
+  padding: 1.25rem 1rem;
+  text-transform: capitalize;
+  border-radius: var(--mainBorderRadius);
+  box-shadow: var(--lightShadow);
+}
+
+.form-control label {
+  display: block;
+}
+.form-control input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--darkGrey);
+  margin-bottom: 1.25rem;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+.form-empty,
+.stripe-errors {
+  text-align: center;
+  color: var(--mainRed);
+}
+.register-link {
+  margin-bottom: 0;
+  margin-top: 1rem;
+  text-align: center;
+}
+.register-link button {
+  background: transparent;
+  border: none;
+  color: var(--primaryColor);
+  text-transform: capitalize;
+  font-size: inherit;
+  display: inline-block;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+.disabled {
+  color: var(--mainWhite);
+  background: var(--darkGrey);
+  border-color: var(--darkGrey);
+}
+.disabled:hover {
+  background: transparent;
+  color: var(--darkGrey);
+  border-color: var(--darkGrey);
+}

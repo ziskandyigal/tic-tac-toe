@@ -1,7 +1,13 @@
 <script>
+  import { Router, Route } from "svelte-routing";
+
+  import LoginUser from "./pages/LoginUser.svelte"
 </script>
 
-<style>
-</style>
+<!-- <Router> -->
+	<!-- <Navbar /> -->
+  <!-- <Route path="/login" component={LoginUser} /> -->
 
-<h1>Hello</h1>
+<!-- </Router> -->
+
+<LoginUser />

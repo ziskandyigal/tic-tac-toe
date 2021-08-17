@@ -59,3 +59,5 @@ gem 'rexml'
 gem "bcrypt", "~> 3.1"
 
 gem "jwt", "~> 2.2"
+
+gem "rack-cors", "~> 1.1"

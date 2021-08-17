@@ -15,3 +15,8 @@
 
 `/tokens`
 - create
+
+
+## notes 
+- disable crsf checks
+add `protect_from_forgery with: :null_session, only: [:create]` to `aaplication_controller.rb`
