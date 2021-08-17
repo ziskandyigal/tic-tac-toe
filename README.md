@@ -7,3 +7,11 @@
 ### add controller and map it to the domain root route
 `rails g controller home index`
 `root 'home#index'` _add to `routes.rb` file_
+
+## routes
+`/users`
+- create
+- delete
+
+`/tokens`
+- create

@@ -1,6 +1,10 @@
 require "test_helper"
 
 class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @user = users(:one)
+  end
+  
   test "create user should succeed" do
     assert_difference('User.count') do
       post api_v1_users_url, params: {
@@ -38,5 +42,23 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_response :unprocessable_entity
+  end
+
+  test "delete user with jwt, succees" do
+    assert_difference('User.count', -1) do
+      delete api_v1_user_url(@user), headers: {
+        Authorization: JsonWebToken.encode(user_id: @user.id)
+      }, as: :json
+    end
+
+    assert_response :no_content
+  end
+
+  test "delete user without jwt, should fail" do
+    assert_no_difference('User.count') do
+      delete api_v1_user_url(@user), as: :json
+    end
+
+    assert_response :forbidden
   end
 end
