@@ -29,6 +29,13 @@ Variables
   --mainBorderRadius: 0.25rem;
   --smallWidth: 85vw;
   --maxWidth: 1170px;
+  --black: #424747;
+  --white: #fdfdfd;
+  --silver: #e2e2e2;
+  --orange: #fa9804;
+  --red: #e41b65;
+  --blue: #1b83e4;
+  --green: #a8e41b;
 }
 /* 
 ====== 
@@ -40,8 +47,7 @@ Global Styles
   padding: 0;
   box-sizing: border-box;
 }
-
-body {
+/* body {
   font-family: var(--primaryFont);
   color: var(--mainBlack);
   background: var(--mainBackground);
@@ -49,8 +55,30 @@ body {
   font-size: 1rem;
   font-weight: 300;
   margin-top: 5rem;
+}  */
+
+body {
+    color: var(--black);
+    min-height: 100vh;
+    text-align: center;
+    font-family: Arial Rounded MT Bold, Helvetica Rounded, Arial, sans-serif;
+    background: var(--white);
 }
-h1,
+main {
+  margin-top: 5rem;
+  width: 90%;
+  max-width: 400px;
+  max-height: 500px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin: 0 0 2.5rem;
+  padding: 0.25rem 1rem;
+  display: inline-block;
+  border-bottom: 1px solid var(--silver);
+}
 h2,
 h3,
 h4,
@@ -74,11 +102,7 @@ img {
   width: 100%;
   display: block;
 }
-/* 
-====== 
-Buttons 
-======
-*/
+
 .btn,
 .btn-white,
 .btn-primary {
@@ -122,12 +146,6 @@ Buttons
   box-shadow: var(--lightShadow);
   text-align: center;
 }
-
-/* 
-====== 
-Navbar 
-======
-*/
 
 .navbar {
   background: var(--mainWhite);
@@ -291,4 +309,15 @@ Navbar
   background: transparent;
   color: var(--darkGrey);
   border-color: var(--darkGrey);
+}
+
+.board {
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  grid-gap: 8px;
+  padding: 12px;
+  position: relative;
+  background-color: var(--silver);
+  border: 1px solid var(--silver);
+  border-radius: 10px;
 }

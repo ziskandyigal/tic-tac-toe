@@ -1,12 +1,14 @@
 <script>
     import { navigate } from "svelte-routing";
+    import { onMount } from "svelte";
     
+    import user from "../stores/user";
     import loginUser from "../api/login";
     import registerUser from "../api/register";
 
     let email = "";
     let password = "";
-    let isMember = false;
+    let isMember = true;
     
     $: isEmpty = !email || !password 
 
@@ -28,6 +30,16 @@
             return;
         }
     };
+
+    onMount(() => {
+        if (!$user.token) {
+            navigate("/login");
+            return;
+        } else {
+            navigate("/game");
+            return;
+        }
+    })
 </script>
 
 <section class="form">
