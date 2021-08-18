@@ -14,9 +14,13 @@ class GameTest < ActiveSupport::TestCase
   end
 
   test "game time should be defined" do
-    game = Game.new(status: :win)
+    game = Game.new()
 
     assert_not_nil game.time
+  end
+
+  test "should filter games by its win status" do
+    assert_equal 2, Game.win().count
   end
 end
 

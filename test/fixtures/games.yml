@@ -9,3 +9,13 @@ two:
   status: 1
   time: 2021-08-18
   user: two
+
+three:
+  status: :win
+  time: 2021-08-18
+  user: two
+
+four:
+  status: :win
+  time: 2021-08-18
+  user: two
