@@ -11,4 +11,10 @@ class UserTest < ActiveSupport::TestCase
     user = User.new(email: existing_user.email, password_digest: "123123")
     assert_not user.valid?
   end
+
+  test "destroy user has to destroy user's acciciated games" do
+    assert_difference('Game.count', -1) do
+      users(:one).destroy
+    end
+  end
 end
