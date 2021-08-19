@@ -16,6 +16,11 @@ class Api::V1::UsersController < ApplicationController
         end
     end
 
+    # GET /users/1
+    def show
+        render json: User.find(params[:id])
+    end
+
     # DELETE /users/1
     def destroy
         @user.destroy

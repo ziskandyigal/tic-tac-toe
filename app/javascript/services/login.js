@@ -1,5 +1,5 @@
 import axios from "axios";
-import { setupUser } from "../services/setupUser";
+import { setupUser } from "../helpers/setupUser";
 import url from "./URL"
 
 const loginUser = async (email, password) => {

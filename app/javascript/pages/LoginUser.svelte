@@ -3,8 +3,8 @@
     import { onMount } from "svelte";
     
     import user from "../stores/user";
-    import loginUser from "../api/login";
-    import registerUser from "../api/register";
+    import loginUser from "../services/login";
+    import registerUser from "../services/register";
 
     let email = "";
     let password = "";

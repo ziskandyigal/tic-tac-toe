@@ -5,7 +5,9 @@
     import Square from "./Square.svelte";
     import Status from "./Status.svelte";
     import { getBoard, getWinner, isFull } from "../helpers/boardHelpers";
-  
+    import submitGameResult from "../../services/submitGameResult";
+    import user from "../../stores/user"
+
     let player = "X";
     let start = true;
     let winner = null;
@@ -17,14 +19,23 @@
       
       if (getWinner(board)) {
         winner = player;
+        let status = "lose"
+        
+        if (winner == "X") {
+          status = "win"
+        }
+
+        submitGameResult({gameStatus: status, userToken: $user.token })
+        .catch(e => console.error(e))
       } else if (isFull(board)) {
         draw = true;
+        submitGameResult({gameStatus: "draw", userToken: $user.token })
+        .catch(e => console.error(e))
       } else {
         player = player === "X" ? "Y" : "X";
 
         if (player == "Y") {
           let openedPossitions = board.map((value, i) => value == "" ? i : null).filter(value => value != null);
-          console.log("positions", openedPossitions)
           setValue(openedPossitions[Math.floor((Math.random() * openedPossitions.length))]);
         }
       }

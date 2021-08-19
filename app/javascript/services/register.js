@@ -2,7 +2,7 @@
 import axios from "axios";
 
 import url from "./URL"
-import { setupUser } from "../services/setupUser";
+import { setupUser } from "../helpers/setupUser";
 
 const registerUser = async (email, password) => {
     const response = await axios
