@@ -3,9 +3,7 @@
 one:
   text: MyString
   user: one
-  game: one
 
 two:
   text: MyString
   user: two
-  game: two

@@ -37,8 +37,7 @@ class Api::V1::GamesControllerTest < ActionDispatch::IntegrationTest
         },
         headers: {
           Authorization: JsonWebToken.encode(user_id: @game.user_id)
-        },
-        as: :json
+        }, as: :json
     end
 
     assert_response :created

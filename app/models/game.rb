@@ -8,7 +8,6 @@ class Game < ApplicationRecord
   enum status: [:win, :lose, :draw], _default: "draw"
 
   belongs_to :user
-  has_many :comments, dependent: :destroy
 
   private 
 

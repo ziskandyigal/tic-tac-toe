@@ -3,6 +3,10 @@ class User < ApplicationRecord
     validates_format_of :email, with: /@/
     validates :password_digest, presence: true
 
+    scope :by_email, lambda { |email|
+        where(:email => email)
+    }
+
     # utilise ActiveModel:SecurePassword:has_secure_password interface integration with bcrypt
     has_secure_password
     # assiciation
