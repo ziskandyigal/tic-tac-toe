@@ -9,8 +9,7 @@
 <Router> 
   <Navbar />
 
-  <Route path="/" component={LoginUser} />
-  <Route path="/game" component={Game} />
+  <Route path="/" component={Game} />
   <Route path="/login" component={LoginUser} />
 
 </Router>

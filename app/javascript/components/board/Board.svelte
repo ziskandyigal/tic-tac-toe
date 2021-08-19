@@ -1,4 +1,4 @@
-<!-- credits to iambry for game implementation -->
+<!-- credits to iambry for initial game -->
 <!-- https://codesandbox.io/embed/svelte-tac-toe-pt5cf?theme=dark&view=preview&codemirror=1&hidenavigation=1&hidedevtools=1 -->
 
 <script>
@@ -14,13 +14,19 @@
   
     const setValue = index => {
       board = board.map((value, i) => (index === i ? player : value));
-  
+      
       if (getWinner(board)) {
         winner = player;
       } else if (isFull(board)) {
         draw = true;
       } else {
         player = player === "X" ? "Y" : "X";
+
+        if (player == "Y") {
+          let openedPossitions = board.map((value, i) => value == "" ? i : null).filter(value => value != null);
+          console.log("positions", openedPossitions)
+          setValue(openedPossitions[Math.floor((Math.random() * openedPossitions.length))]);
+        }
       }
     };
   
@@ -29,6 +35,7 @@
       draw = false;
       start = false;
       board = getBoard(true);
+      player = "X";
     };
   </script>
   

@@ -26,7 +26,7 @@
         }
 
         if (user) {
-            navigate("/game");
+            navigate("/");
             return;
         }
     };
@@ -36,7 +36,7 @@
             navigate("/login");
             return;
         } else {
-            navigate("/game");
+            navigate("/");
             return;
         }
     })

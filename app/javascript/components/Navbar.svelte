@@ -2,7 +2,7 @@
     import { link } from "svelte-routing";
     import LoginLink from "./LoginLink.svelte";
 
-    const links = [{url: "game", text: "play the game"}, {url: "scores", text: "check-out scores"}]
+    const links = [{url: "", text: "play the game"}, {url: "scores", text: "check-out scores"}]
 </script>
 
 <nav class="navbar">
