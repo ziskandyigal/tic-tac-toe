@@ -17,4 +17,10 @@ class UserTest < ActiveSupport::TestCase
       users(:one).destroy
     end
   end
+
+  test "destroy user has to destroy user's acciciated comments" do
+    assert_difference('Comment.count', -1) do
+      users(:one).destroy
+    end
+  end
 end

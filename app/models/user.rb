@@ -6,5 +6,6 @@ class User < ApplicationRecord
     # utilise ActiveModel:SecurePassword:has_secure_password interface integration with bcrypt
     has_secure_password
     # assiciation
-    has_many :games, dependent: :delete_all
+    has_many :games, dependent: :destroy
+    has_many :comments, dependent: :destroy
 end
