@@ -248,6 +248,27 @@ img {
   border-radius: var(--mainBorderRadius);
   box-shadow: var(--lightShadow);
 }
+.single-score {
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.3rem 1rem;
+  border-radius: var(--mainBorderRadius);
+  background: var(--mainWhite);
+  box-shadow: var(--lightShadow);
+}
+.single-score h2 {
+  margin-bottom: 0;
+  font-weight: 300;
+}
+.single-score h4 {
+  margin-bottom: 0;
+  margin-top: 1rem;
+  font-weight: 300;
+  color: var(--primaryColor);
+}
 
 .form-control label {
   display: block;

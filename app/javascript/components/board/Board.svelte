@@ -51,7 +51,7 @@
   </script>
   
   <main>
-    <h1>Tic Tac Toe</h1>
+    <h2>Tic Tac Toe</h2>
     <div class="board">
       {#each board as value, index}
         <Square {value} {index} {setValue} />
