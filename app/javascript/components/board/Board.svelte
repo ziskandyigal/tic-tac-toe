@@ -36,7 +36,10 @@
 
         if (player == "Y") {
           let openedPossitions = board.map((value, i) => value == "" ? i : null).filter(value => value != null);
-          setValue(openedPossitions[Math.floor((Math.random() * openedPossitions.length))]);
+
+          setTimeout(function() {
+            setValue(openedPossitions[Math.floor((Math.random() * openedPossitions.length))]);
+          }, 200, openedPossitions);
         }
       }
     };
@@ -51,7 +54,6 @@
   </script>
   
   <main>
-    <h2>Tic Tac Toe</h2>
     <div class="board">
       {#each board as value, index}
         <Square {value} {index} {setValue} />

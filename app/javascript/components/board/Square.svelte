@@ -10,7 +10,7 @@
 	  padding: 0.25rem 0.5rem;
 	  font-size: 5rem;
 	  font-family: inherit;
-	  min-height: 7.5rem;
+	  min-height: 8.5rem;
 	  cursor: pointer;
 	  background-color: var(--white);
 	  transition: background-color 0.25s ease;

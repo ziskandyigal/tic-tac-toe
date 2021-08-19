@@ -14,8 +14,10 @@
     })
 </script>
 
-{#if !$user}
-    <h1>Please log in</h1>
-{:else}
-    <Board />
-{/if}
+<section class="form">
+    {#if !$user}
+        <h1>Please log in</h1>
+    {:else}
+        <Board />
+    {/if}
+</section>

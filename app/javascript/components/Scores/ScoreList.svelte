@@ -13,6 +13,7 @@
 </style>
 
 <section>
+    <h2>User scores:</h2>
     {#each gameScores as userScore, index (userScore.id)}
         <div
             in:fly={{ x: 200, delay: index * 700 }}
