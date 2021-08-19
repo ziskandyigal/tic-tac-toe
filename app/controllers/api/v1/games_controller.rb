@@ -23,7 +23,7 @@ class Api::V1::GamesController < ApplicationController
     end
 
     def wins
-        render json: Game.win()
+        render json: Game.win.group(:user_id).count
     end
 
     private

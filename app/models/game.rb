@@ -1,7 +1,7 @@
 class Game < ApplicationRecord
   after_initialize :set_time
 
-  scope :win, lambda {|status| 
+  scope :win, lambda { |_|
     where(:status => "win")
   }
 

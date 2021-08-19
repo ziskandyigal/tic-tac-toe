@@ -1,12 +1,12 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  status: 1
+  status: :lose
   time: 2021-08-18
   user: one
 
 two:
-  status: 1
+  status: :draw
   time: 2021-08-18
   user: two
 
