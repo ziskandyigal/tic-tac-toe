@@ -1,6 +1,6 @@
 <script>
     import { onMount } from "svelte";
-    import { navigate, link } from "svelte-routing";
+    import { navigate } from "svelte-routing";
 
     import user from "../stores/user";
 

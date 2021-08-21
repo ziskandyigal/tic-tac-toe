@@ -322,3 +322,7 @@ img {
   border: 1px solid var(--silver);
   border-radius: 10px;
 }
+
+.edit-btn {
+  color: green;
+}

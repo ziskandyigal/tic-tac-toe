@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :tokens, only: [:create]
       get 'games/wins' => 'games#wins'
       resources :games, only: %i[show index create]
-      get 'comments/byemail' => 'comments#byemail'
+      post 'comments/byemail' => 'comments#byemail'
       resources :comments, only: [:create]
     end
   end

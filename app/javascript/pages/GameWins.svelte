@@ -1,6 +1,6 @@
 <script>
     import { onMount } from "svelte";
-    import ScoreList from "../components/Scores/ScoreList.svelte";
+    import ScoreList from "../components/winScores/ScoreList.svelte";
 
     import getUserDetails from "../services/getUserDetails.js";
     import getGameWinResults from "../services/getGameWinResults.js";
