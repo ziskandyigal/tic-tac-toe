@@ -1,4 +1,8 @@
 # README
+DISCLAIMER - it's a pet project in order to get into rails ecosystem.
+
+BE - rails as an api
+FE - svelte SPA
 
 ### add svelte to rails
 `rails webpacker:install:svelte`
@@ -8,15 +12,20 @@
 `rails g controller home index`
 `root 'home#index'` _add to `routes.rb` file_
 
-## routes
+## routes _basic crud_
 `/users`
-- create
-- delete
 
 `/tokens`
-- create
+
+`/games`
+
+`/comments`
 
 
 ## notes 
 - disable crsf checks
 add `protect_from_forgery with: :null_session, only: [:create]` to `aaplication_controller.rb`
+
+
+## TODO
+- add additional notes
