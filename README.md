@@ -2,8 +2,10 @@
 DISCLAIMER - it's a pet project in order to get into rails ecosystem.
 
 BE - rails as an api
-FE - svelte SPA
+FE - Svelte SPA
 
+
+## Apply Svelte into Rails
 ### add svelte to rails
 `rails webpacker:install:svelte`
 ### add js script to `application.html.erb` file
@@ -23,7 +25,7 @@ FE - svelte SPA
 
 
 ## notes 
-- disable crsf checks
+- disable crsf checks (for local development)
 add `protect_from_forgery with: :null_session, only: [:create]` to `aaplication_controller.rb`
 
 
